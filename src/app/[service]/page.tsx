@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { services, getService, getSourceConfig, ServiceKey } from '@/config/services';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import WindowTypes from '@/components/WindowTypes';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Reviews from '@/components/Reviews';
 import LeadForm from '@/components/LeadForm';
@@ -87,6 +88,8 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
       />
 
       <Features service={serviceConfig} />
+
+      {service === 'windows' && <WindowTypes />}
 
       <WhyChooseUs />
 
