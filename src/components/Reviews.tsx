@@ -1,8 +1,20 @@
 'use client';
 
-import Script from 'next/script';
+import { useEffect, useRef } from 'react';
 
 export default function Reviews() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current && !containerRef.current.querySelector('script')) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.trustindex.io/loader.js?0dbce716169d787949969389a57';
+      script.async = true;
+      script.defer = true;
+      containerRef.current.appendChild(script);
+    }
+  }, []);
+
   return (
     <section id="reviews" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -16,12 +28,7 @@ export default function Reviews() {
         </div>
 
         {/* TrustIndex Reviews Widget */}
-        <div className="trustindex-widget">
-          <Script
-            src="https://cdn.trustindex.io/loader.js?0dbce716169d787949969389a57"
-            strategy="lazyOnload"
-          />
-        </div>
+        <div ref={containerRef} className="trustindex-widget" />
       </div>
     </section>
   );
