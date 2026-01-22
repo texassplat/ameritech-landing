@@ -110,10 +110,6 @@ export const insulationGallery = [
     alt: 'Complete attic insulation method',
   },
   {
-    src: 'https://www.ameritechwindows.com/wp-content/uploads/2024/11/new-insulation-technology-CO.jpg',
-    alt: 'New insulation technology in Colorado',
-  },
-  {
     src: 'https://www.ameritechwindows.com/wp-content/uploads/2024/11/best-Attic-Insulation.jpg',
     alt: 'Best attic insulation',
   },
