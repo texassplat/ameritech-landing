@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import PhoneLink from './PhoneLink';
 import { company } from '@/config/services';
 
@@ -31,9 +32,16 @@ export default function Navbar({ phone, serviceName, serviceKey, source }: Navba
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - TODO: Replace with actual logo */}
+          {/* Logo */}
           <Link href={buildLink('')} className="flex items-center">
-            <span className="text-2xl font-bold text-primary">{company.name}</span>
+            <Image
+              src={company.logo}
+              alt={company.logoAlt}
+              width={200}
+              height={60}
+              className="h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

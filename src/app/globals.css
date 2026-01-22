@@ -2,15 +2,15 @@
 
 /* Ameritech Brand Colors */
 @theme {
-  --color-primary: #0077b6;
-  --color-primary-dark: #005f8a;
-  --color-primary-light: #00a8e8;
-  --color-secondary: #e63946;
-  --color-secondary-light: #ff6b6b;
-  --color-accent: #ffd700;
-  --color-dark: #1a1a2e;
+  --color-primary: #0693e3;
+  --color-primary-dark: #0574b8;
+  --color-primary-light: #3aa8e8;
+  --color-secondary: #32373c;
+  --color-secondary-light: #4a5058;
+  --color-accent: #ffc107;
+  --color-dark: #32373c;
   --color-gray: #6b7280;
-  --color-light: #f8fafc;
+  --color-light: #f8f9fa;
 
   /* Font family */
   --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -50,14 +50,14 @@ body {
 .hero-overlay {
   background: linear-gradient(
     135deg,
-    rgba(0, 119, 182, 0.9) 0%,
-    rgba(26, 26, 46, 0.95) 100%
+    rgba(6, 147, 227, 0.85) 0%,
+    rgba(50, 55, 60, 0.9) 100%
   );
 }
 
 /* Promo banner */
 .promo-banner {
-  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+  background: linear-gradient(90deg, #0693e3 0%, #0574b8 100%);
 }
 
 /* Accent highlight */

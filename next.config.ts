@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '*.ameritechwindows.com',
+        hostname: 'www.ameritechwindows.com',
         pathname: '/**',
       },
     ],

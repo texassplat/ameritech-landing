@@ -29,10 +29,12 @@ export const company = {
   tagline: '#1 Door & Window Company in Greater Colorado',
   location: 'Denver',
   state: 'CO',
-  address: 'Denver, CO', // TODO: Update with real address
+  address: 'Denver, CO',
   domain: 'ameritechwindows.com',
   rating: 'BBB A+ Rating',
   reviews: '700+ Five-Star Reviews',
+  logo: 'https://www.ameritechwindows.com/wp-content/uploads/2020/04/ameritech_logo_update.png',
+  logoAlt: 'Ameritech Windows Logo',
 };
 
 // Current promotion - easily update site-wide
@@ -49,7 +51,7 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     slug: 'windows',
     headline: '#1 Window Company in Greater Colorado',
     subheadline: 'Energy-efficient triple-pane windows with professional installation. Save on energy bills and enjoy a more comfortable home.',
-    heroImage: '/images/windows-hero.jpg', // TODO: Add actual image
+    heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2024/07/window-company-Colorado-1.jpg',
     google: {
       phone: '720-927-9036', // TODO: Replace with Google tracking number
     },
@@ -73,7 +75,7 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     slug: 'doors',
     headline: 'Top-Rated Door Company in Colorado',
     subheadline: 'Quality entry doors, patio doors, and storm doors designed to withstand Colorado\'s diverse climate. Expert installation by certified professionals.',
-    heroImage: '/images/doors-hero.jpg', // TODO: Add actual image
+    heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2020/09/entry-door-by-ameritech-windows-september.jpg',
     google: {
       phone: '303-444-1998', // TODO: Replace with Google tracking number
     },
@@ -97,7 +99,7 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     slug: 'insulation',
     headline: '#1 Insulation Company in Colorado',
     subheadline: 'High-quality insulation to reduce utility costs and maintain comfort throughout seasonal changes. Expert installation in Boulder & Denver.',
-    heroImage: '/images/insulation-hero.jpg', // TODO: Add actual image
+    heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2020/04/Ameritech-Windows-triple-pane-windows-in-Denver.jpg',
     google: {
       phone: '303-444-1998', // TODO: Replace with Google tracking number
     },
