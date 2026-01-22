@@ -31,7 +31,7 @@ export const company = {
   location: 'Denver',
   state: 'CO',
   address: '1748 E 66th Ave, Denver, CO 80229',
-  mapUrl: 'https://www.google.com/maps/search/?api=1&query=1748+E+66th+Ave+Denver+CO+80229',
+  mapUrl: 'https://www.google.com/maps/place/Ameritech+Windows/@39.8153372,-104.9672349,16z/data=!4m15!1m8!3m7!1s0x876c79dc426dfaef:0xb6333312ae8fd43f!2s1748+E+66th+Ave,+Denver,+CO+80229!3b1!8m2!3d39.8147851!4d-104.966618!16s%2Fg%2F11q2ndv1pj!3m5!1s0x876bec306c81985d:0xb5e3a70e3485953f!8m2!3d39.8147851!4d-104.966618!16s%2Fg%2F1td05k18',
   domain: 'ameritechwindows.com',
   rating: 'BBB A+ Rating',
   reviews: '700+ Five-Star Reviews',
