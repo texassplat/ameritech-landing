@@ -87,10 +87,10 @@ export default function Footer({ service, phone, serviceKey, source }: FooterPro
               &copy; {currentYear} {company.name}. All rights reserved.
             </p>
             <div className="flex gap-4 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.ameritechwindows.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.ameritechwindows.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 Terms of Service
               </a>
             </div>
