@@ -24,6 +24,39 @@ interface FormData {
   message: string;
 }
 
+interface FormErrors {
+  email?: string;
+  phone?: string;
+  zip?: string;
+}
+
+// Validation functions
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validatePhone = (phone: string): boolean => {
+  // Remove all non-digits
+  const digits = phone.replace(/\D/g, '');
+  // Must be 10 digits (US phone number)
+  return digits.length === 10;
+};
+
+const validateZip = (zip: string): boolean => {
+  // US ZIP code: 5 digits or 5+4 format
+  const zipRegex = /^\d{5}(-\d{4})?$/;
+  return zipRegex.test(zip.trim());
+};
+
+// Format phone number as user types
+const formatPhoneNumber = (value: string): string => {
+  const digits = value.replace(/\D/g, '');
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+};
+
 export default function LeadForm({ serviceKey, source }: LeadFormProps) {
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
@@ -37,18 +70,56 @@ export default function LeadForm({ serviceKey, source }: LeadFormProps) {
     projectType: '',
     message: '',
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+
+    // Format phone number as user types
+    if (name === 'phone') {
+      const formatted = formatPhoneNumber(value);
+      setFormData(prev => ({ ...prev, [name]: formatted }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!validatePhone(formData.phone)) {
+      newErrors.phone = 'Please enter a valid 10-digit phone number';
+    }
+
+    if (!validateZip(formData.zip)) {
+      newErrors.zip = 'Please enter a valid 5-digit ZIP code';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setErrorMessage('');
+
+    // Validate form
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
 
     // Preserve UTM params for thank-you page
     const currentParams = new URLSearchParams(window.location.search);
@@ -95,6 +166,13 @@ export default function LeadForm({ serviceKey, source }: LeadFormProps) {
       setErrorMessage('Something went wrong. Please try again or call us directly.');
       setIsSubmitting(false);
     }
+  };
+
+  const inputClassName = (fieldName: keyof FormErrors) => {
+    const baseClass = "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition";
+    return errors[fieldName]
+      ? `${baseClass} border-red-500 bg-red-50`
+      : `${baseClass} border-gray-300`;
   };
 
   return (
@@ -153,9 +231,12 @@ export default function LeadForm({ serviceKey, source }: LeadFormProps) {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+              className={inputClassName('email')}
               placeholder="john@example.com"
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+            )}
           </div>
 
           {/* Phone */}
@@ -170,9 +251,13 @@ export default function LeadForm({ serviceKey, source }: LeadFormProps) {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+              className={inputClassName('phone')}
               placeholder="(303) 555-0100"
+              maxLength={14}
             />
+            {errors.phone && (
+              <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+            )}
           </div>
 
           {/* Address */}
@@ -221,9 +306,13 @@ export default function LeadForm({ serviceKey, source }: LeadFormProps) {
               required
               value={formData.zip}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+              className={inputClassName('zip')}
               placeholder="80202"
+              maxLength={10}
             />
+            {errors.zip && (
+              <p className="mt-1 text-sm text-red-600">{errors.zip}</p>
+            )}
           </div>
 
           {/* Project Type */}
