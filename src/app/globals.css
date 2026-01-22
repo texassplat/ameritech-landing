@@ -90,3 +90,45 @@ body {
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
 }
+
+/* Trust Badges Slider */
+.trust-badges-slider {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.trust-badges-track {
+  display: flex;
+  animation: scroll-badges 30s linear infinite;
+  width: fit-content;
+}
+
+.trust-badge-item {
+  flex-shrink: 0;
+}
+
+@keyframes scroll-badges {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trust-badges-slider:hover .trust-badges-track {
+  animation-play-state: paused;
+}

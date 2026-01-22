@@ -14,6 +14,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import PageTracker from '@/components/PageTracker';
 import { windowsGallery, doorsGallery, insulationGallery } from '@/config/gallery';
+import TrustBadges from '@/components/TrustBadges';
 
 interface PageProps {
   params: Promise<{ service: string }>;
@@ -90,6 +91,8 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
         serviceKey={service}
         source={sourceConfig.source}
       />
+
+      <TrustBadges />
 
       {service !== 'doors' && <Features service={serviceConfig} />}
 
