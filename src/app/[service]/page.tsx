@@ -91,7 +91,7 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
         source={sourceConfig.source}
       />
 
-      <Features service={serviceConfig} />
+      {service !== 'doors' && <Features service={serviceConfig} />}
 
       {service === 'windows' && <WindowTypes />}
       {service === 'doors' && <DoorTypes />}
