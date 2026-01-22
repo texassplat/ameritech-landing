@@ -4,6 +4,7 @@ import { services, getService, getSourceConfig, ServiceKey } from '@/config/serv
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import WindowTypes from '@/components/WindowTypes';
+import DoorTypes from '@/components/DoorTypes';
 import InsulationTypes from '@/components/InsulationTypes';
 import Gallery from '@/components/Gallery';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -93,6 +94,7 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
       <Features service={serviceConfig} />
 
       {service === 'windows' && <WindowTypes />}
+      {service === 'doors' && <DoorTypes />}
       {service === 'insulation' && <InsulationTypes />}
 
       {service === 'windows' && (
