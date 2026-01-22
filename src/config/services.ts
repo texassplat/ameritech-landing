@@ -98,8 +98,8 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     displayName: 'Insulation',
     slug: 'insulation',
     headline: '#1 Insulation Company in Colorado',
-    subheadline: 'High-quality insulation to reduce utility costs and maintain comfort throughout seasonal changes. Expert installation in Boulder & Denver.',
-    heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2020/04/Ameritech-Windows-triple-pane-windows-in-Denver.jpg',
+    subheadline: 'Cut your heating and cooling bills by up to 25%. Our reflective barrier and blown-in insulation stops over 97% of radiant heat transfer.',
+    heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2024/11/best-Attic-Insulation.jpg',
     google: {
       phone: '303-444-1998', // TODO: Replace with Google tracking number
     },
@@ -108,14 +108,14 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     },
     defaultPhone: '303-444-1998',
     features: [
-      'Attic, Wall & Crawl Space Insulation',
-      'Fiberglass & Spray Foam Options',
-      'Basement Insulation Services',
-      'Reduces Heat Loss & Utility Costs',
-      'Prevents Mold & Mildew Issues',
-      'Professional & Courteous Installers',
+      'Reflective Barrier Insulation',
+      'Blown-In Attic Insulation',
+      'Comprehensive Air Sealing',
+      'Save Up to 25% on Energy Bills',
+      'Lifetime Warranty - No Maintenance',
+      'Free of Dangerous Fibers & Allergens',
     ],
-    metaDescription: '#1 Insulation company in Colorado. Attic, wall, crawl space & basement insulation. Reduce energy costs. Free estimates in Boulder & Denver!',
+    metaDescription: '#1 Insulation company in Colorado. Attic insulation that cuts energy bills by 25%. Reflective barrier & blown-in options. Free estimates in Boulder & Denver!',
     promo: currentPromo,
   },
 };
