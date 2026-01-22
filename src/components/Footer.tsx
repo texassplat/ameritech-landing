@@ -21,9 +21,17 @@ export default function Footer({ service, phone, serviceKey, source }: FooterPro
             <p className="text-gray-400 mb-4">
               {service.displayName} specialists serving {company.location}, {company.state} and surrounding areas.
             </p>
-            <p className="text-gray-400">
-              {company.address}
-            </p>
+            <a
+              href={company.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors flex items-start gap-2"
+            >
+              <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <span>{company.address}</span>
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -64,9 +72,9 @@ export default function Footer({ service, phone, serviceKey, source }: FooterPro
                 <span className="text-lg font-semibold">{phone}</span>
               </PhoneLink>
               <p className="text-gray-400 text-sm">
-                Mon-Fri: 8am - 6pm<br />
-                Sat: 9am - 4pm<br />
-                Sun: Closed
+                {company.hours.weekday}<br />
+                {company.hours.saturday}<br />
+                {company.hours.sunday}
               </p>
             </div>
           </div>

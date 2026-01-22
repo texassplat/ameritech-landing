@@ -29,12 +29,18 @@ export const company = {
   tagline: '#1 Door & Window Company in Greater Colorado',
   location: 'Denver',
   state: 'CO',
-  address: 'Denver, CO',
+  address: '1748 E 66th Ave, Denver, CO 80229',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=1748+E+66th+Ave+Denver+CO+80229',
   domain: 'ameritechwindows.com',
   rating: 'BBB A+ Rating',
   reviews: '700+ Five-Star Reviews',
   logo: 'https://www.ameritechwindows.com/wp-content/uploads/2020/04/ameritech_logo_update.png',
   logoAlt: 'Ameritech Windows Logo',
+  hours: {
+    weekday: 'Monday - Friday: 8:00 AM – 7:30 PM',
+    saturday: 'Saturday: 9:00 AM – 5:00 PM',
+    sunday: 'Sunday: 9:00 AM – 4:00 PM',
+  },
 };
 
 // Current promotion - easily update site-wide
