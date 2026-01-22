@@ -4,12 +4,14 @@ import { services, getService, getSourceConfig, ServiceKey } from '@/config/serv
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import WindowTypes from '@/components/WindowTypes';
+import Gallery from '@/components/Gallery';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Reviews from '@/components/Reviews';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import PageTracker from '@/components/PageTracker';
+import { windowsGallery, doorsGallery, insulationGallery } from '@/config/gallery';
 
 interface PageProps {
   params: Promise<{ service: string }>;
@@ -90,6 +92,30 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
       <Features service={serviceConfig} />
 
       {service === 'windows' && <WindowTypes />}
+
+      {service === 'windows' && (
+        <Gallery
+          title="Our Window Projects"
+          subtitle="See the transformation. Browse before and after photos of our window installations across Colorado."
+          images={windowsGallery}
+        />
+      )}
+
+      {service === 'doors' && (
+        <Gallery
+          title="Our Door Projects"
+          subtitle="From entry doors to patio doors, see our quality craftsmanship in action."
+          images={doorsGallery}
+        />
+      )}
+
+      {service === 'insulation' && (
+        <Gallery
+          title="Our Insulation Projects"
+          subtitle="See how proper insulation transforms homes and improves energy efficiency."
+          images={insulationGallery}
+        />
+      )}
 
       <WhyChooseUs />
 
