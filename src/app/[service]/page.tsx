@@ -4,6 +4,7 @@ import { services, getService, getSourceConfig, ServiceKey } from '@/config/serv
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import Reviews from '@/components/Reviews';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -88,6 +89,8 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
       <Features service={serviceConfig} />
 
       <WhyChooseUs />
+
+      <Reviews />
 
       <section id="quote" className="py-16 bg-light">
         <div className="max-w-7xl mx-auto px-4">

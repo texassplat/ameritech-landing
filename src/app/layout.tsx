@@ -62,6 +62,11 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WSZ9M6ZS');
           `}
         </Script>
+        {/* TrustIndex Certificate */}
+        <Script
+          src="https://cdn.trustindex.io/loader-cert.js?9f0078e62e8f914857263734334"
+          strategy="lazyOnload"
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {/* Google Tag Manager (noscript) */}
