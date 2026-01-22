@@ -19,6 +19,7 @@ export interface ServiceConfig {
   promo?: {
     title: string;
     subtitle: string;
+    financing: string;
     expiry?: string;
   };
 }
@@ -47,6 +48,14 @@ export const company = {
 export const currentPromo = {
   title: 'SAVE 20% OFF EVERYTHING!',
   subtitle: 'FREE UPGRADE TO TRIPLE PANE',
+  financing: '$0 Down • 24 Months No Interest',
+  expiry: '2026-02-01',
+};
+
+// Promo without triple pane (for doors/insulation)
+export const currentPromoNoTriplePane = {
+  title: 'SAVE 20% OFF EVERYTHING!',
+  subtitle: '',
   financing: '$0 Down • 24 Months No Interest',
   expiry: '2026-02-01',
 };
@@ -98,7 +107,7 @@ export const services: Record<ServiceKey, ServiceConfig> = {
       'Energy-Efficient & Secure',
     ],
     metaDescription: 'Top-rated door company in Colorado. Entry doors, patio doors, and more. Built to withstand Colorado weather. Free quotes available!',
-    promo: currentPromo,
+    promo: currentPromoNoTriplePane,
   },
   insulation: {
     displayName: 'Insulation',
@@ -122,7 +131,7 @@ export const services: Record<ServiceKey, ServiceConfig> = {
       'Free of Dangerous Fibers & Allergens',
     ],
     metaDescription: '#1 Insulation company in Colorado. Attic insulation that cuts energy bills by 25%. Reflective barrier & blown-in options. Free estimates in Boulder & Denver!',
-    promo: currentPromo,
+    promo: currentPromoNoTriplePane,
   },
 };
 

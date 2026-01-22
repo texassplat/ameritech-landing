@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import PhoneLink from './PhoneLink';
-import { ServiceConfig, company, currentPromo } from '@/config/services';
+import { ServiceConfig, company } from '@/config/services';
 
 interface HeroProps {
   service: ServiceConfig;
@@ -13,18 +13,24 @@ export default function Hero({ service, phone, serviceKey, source }: HeroProps) 
   return (
     <>
       {/* Promo Banner */}
-      <div className="promo-banner text-white py-3 text-center mt-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <p className="font-bold text-lg md:text-xl">
-            <span className="bg-white/20 px-2 py-1 rounded text-sm uppercase tracking-wide mr-2">Limited Time</span>
-            <span className="text-highlight">{currentPromo.title}</span>
-            {' '}&bull;{' '}
-            <span>{currentPromo.subtitle}</span>
-            {' '}&bull;{' '}
-            <span>{currentPromo.financing}</span>
-          </p>
+      {service.promo && (
+        <div className="promo-banner text-white py-3 text-center mt-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <p className="font-bold text-lg md:text-xl">
+              <span className="bg-white/20 px-2 py-1 rounded text-sm uppercase tracking-wide mr-2">Limited Time</span>
+              <span className="text-highlight">{service.promo.title}</span>
+              {service.promo.subtitle && (
+                <>
+                  {' '}&bull;{' '}
+                  <span>{service.promo.subtitle}</span>
+                </>
+              )}
+              {' '}&bull;{' '}
+              <span>{service.promo.financing}</span>
+            </p>
+          </div>
         </div>
-      </div>
+      )}
 
       <section className="relative min-h-[550px] flex items-center">
         {/* Background Image - TODO: Add actual images */}
