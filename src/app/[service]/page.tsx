@@ -94,7 +94,7 @@ export default async function ServicePage({ params, searchParams }: PageProps) {
 
       <TrustBadges />
 
-      {service !== 'doors' && <Features service={serviceConfig} />}
+      {service === 'insulation' && <Features service={serviceConfig} />}
 
       {service === 'windows' && <WindowTypes />}
       {service === 'doors' && <DoorTypes />}
