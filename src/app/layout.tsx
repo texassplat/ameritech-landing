@@ -10,10 +10,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Ameritech Windows | Denver',
-  description: 'Premium windows, doors, and insulation services in Denver, CO. Get a free quote today!',
+  metadataBase: new URL('https://ameritechwindows.com'),
+  title: {
+    default: 'Ameritech Windows | Denver Windows Installer',
+    template: '%s | Ameritech Windows Denver',
+  },
+  description: 'Locally owned Denver windows installer and replacement. Serving the Front Range for 30+ years. BBB Accredited, free estimates, financing & warranties.',
   icons: {
-    icon: '/favicon.ico',
+    icon: 'https://www.ameritechwindows.com/wp-content/uploads/2019/09/cropped-favicon-300x300.png',
+    apple: 'https://www.ameritechwindows.com/wp-content/uploads/2019/09/cropped-favicon-300x300.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    'max-image-preview': 'large',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Ameritech Windows',
+    title: 'Ameritech Windows | Denver Windows Installer',
+    description: 'Locally owned Denver windows installer and replacement. Serving the Front Range for 30+ years. BBB Accredited, free estimates, financing & warranties.',
+    images: [
+      {
+        url: 'https://www.ameritechwindows.com/wp-content/uploads/2020/04/Ameritech-Windows-triple-pane-windows-in-Denver.jpg',
+        width: 1200,
+        height: 792,
+        alt: 'Logo for Ameritech Windows overlaid on a bright, modern room with large windows',
+      },
+    ],
   },
 };
 

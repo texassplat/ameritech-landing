@@ -22,13 +22,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Not Found' };
   }
 
+  const ogImage = 'https://www.ameritechwindows.com/wp-content/uploads/2020/04/Ameritech-Windows-triple-pane-windows-in-Denver.jpg';
+
   return {
-    title: `${serviceConfig.displayName} | Ameritech Windows Denver`,
+    title: serviceConfig.displayName,
     description: serviceConfig.metaDescription,
     openGraph: {
+      type: 'website',
+      locale: 'en_US',
+      siteName: 'Ameritech Windows',
       title: `${serviceConfig.displayName} | Ameritech Windows Denver`,
       description: serviceConfig.metaDescription,
-      images: [serviceConfig.heroImage],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 792,
+          alt: `Ameritech Windows ${serviceConfig.displayName} services in Denver, Colorado`,
+        },
+      ],
     },
   };
 }
