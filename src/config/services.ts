@@ -53,10 +53,10 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     subheadline: 'Energy-efficient triple-pane windows with professional installation. Save on energy bills and enjoy a more comfortable home.',
     heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2024/07/window-company-Colorado-1.jpg',
     google: {
-      phone: '720-927-9036', // TODO: Replace with Google tracking number
+      phone: '720-927-9036',
     },
     facebook: {
-      phone: '720-927-9036', // TODO: Replace with Facebook tracking number
+      phone: '720-927-9036',
     },
     defaultPhone: '720-927-9036',
     features: [
@@ -77,12 +77,12 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     subheadline: 'Quality entry doors, patio doors, and storm doors designed to withstand Colorado\'s diverse climate. Expert installation by certified professionals.',
     heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2020/09/entry-door-by-ameritech-windows-september.jpg',
     google: {
-      phone: '303-444-1998', // TODO: Replace with Google tracking number
+      phone: '720-927-9036',
     },
     facebook: {
-      phone: '303-444-1998', // TODO: Replace with Facebook tracking number
+      phone: '720-927-9036',
     },
-    defaultPhone: '303-444-1998',
+    defaultPhone: '720-927-9036',
     features: [
       'Entry Doors, Patio Doors & Storm Doors',
       'Wood, Fiberglass & Steel Options',
@@ -101,12 +101,12 @@ export const services: Record<ServiceKey, ServiceConfig> = {
     subheadline: 'Cut your heating and cooling bills by up to 25%. Our reflective barrier and blown-in insulation stops over 97% of radiant heat transfer.',
     heroImage: 'https://www.ameritechwindows.com/wp-content/uploads/2024/11/best-Attic-Insulation.jpg',
     google: {
-      phone: '303-444-1998', // TODO: Replace with Google tracking number
+      phone: '720-927-9036',
     },
     facebook: {
-      phone: '303-444-1998', // TODO: Replace with Facebook tracking number
+      phone: '720-927-9036',
     },
-    defaultPhone: '303-444-1998',
+    defaultPhone: '720-927-9036',
     features: [
       'Reflective Barrier Insulation',
       'Blown-In Attic Insulation',
